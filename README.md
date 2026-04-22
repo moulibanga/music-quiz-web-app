@@ -1,3 +1,7 @@
-App Description: User can enter music preferences on home screen. Then a series of album cover quiz questions will be asked until user ends quiz and views results.<br>
-APIs: LastFM (<a href="https://www.last.fm/api">https://www.last.fm/api</a>)<br>
-Deployed App Link: https://cmsc335-final-project-kcj2.onrender.com/</p>
+# Music Quiz Web App
+
+## Live Demo
+https://cmsc335-final-project-kcj2.onrender.com/
+
+## Overview
+A full-stack web application that allows users to input music preferences and take an interactive album cover quiz with dynamic question flow and results.
