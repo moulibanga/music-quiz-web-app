@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Saved Preferences</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a href="/">Home</a>
+        <a href="/viewPreferences">View Preferences</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="results">
+        <h1>Saved Music Preferences</h1>
+
+        <% if (pref) { %>
+          <div class="preferences-list">
+            <div class="preference-item">
+              <h3>Genres</h3>
+              <p><%= pref.genres %></p>
+            </div>
+            
+            <div class="preference-item">
+              <h3>Artists</h3>
+              <p><%= pref.artists %></p>
+            </div>
+            
+            <div class="preference-item">
+              <h3>Albums</h3>
+              <p><%= pref.albums %></p>
+            </div>
+            
+            <div class="preference-item">
+              <h3>Songs</h3>
+              <p><%= pref.songs %></p>
+            </div>
+            
+            <div class="preference-item">
+              <h3>Other Interests</h3>
+              <p><%= pref.misc %></p>
+            </div>
+          </div>
+        <% } else { %>
+          <p>No preferences saved yet.</p>
+        <% } %>
+
+        <div class="button-group">
+          <a href="/" class="btn">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

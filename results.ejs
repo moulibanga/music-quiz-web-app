@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a href="/">Home</a>
+        <a href="/viewPreferences">View Preferences</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="results">
+        <h1>Quiz Results</h1>
+
+        <% if (isCorrect) { %>
+          <h2 class="correct">✅ Correct!</h2>
+          <p>You nailed it. Great job!</p>
+        <% } else { %>
+          <h2 class="incorrect">❌ Incorrect</h2>
+          <p>The correct album name was: <strong><%= correctAnswer %></strong></p>
+        <% } %>
+
+        <div class="button-group">
+          <a href="/nextQuiz" class="btn">Next Question</a>
+          <form action="/submit" method="POST" style="display: inline;">
+            <input type="hidden" name="userAnswer" value="__end__" />
+            <input type="hidden" name="correctAnswer" value="__end__" />
+            <input type="hidden" name="action" value="end" />
+            <button type="submit" class="btn">End Quiz</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

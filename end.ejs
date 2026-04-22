@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Summary</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a href="/">Home</a>
+        <a href="/viewPreferences">View Preferences</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="results">
+        <h1>Quiz Complete!</h1>
+        
+        <div class="stats">
+          <p>You answered <strong><%= correct %></strong> out of <strong><%= total %></strong> correctly.</p>
+          <p>Your accuracy was <strong><%= accuracy %>%</strong>.</p>
+        </div>
+
+        <div class="button-group">
+          <a href="/" class="btn">Return to Home</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

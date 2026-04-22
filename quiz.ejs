@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Album!</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a href="/">Home</a>
+        <a href="/viewPreferences">View Preferences</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="quiz-container">
+        <h1>Guess the Album!</h1>
+        <img src="<%= quiz.albumCoverUrl %>" alt="Album Cover" class="album-cover" />
+        
+        <form action="/submit" method="POST">
+          <input type="hidden" name="correctAnswer" value="<%= quiz.correctAnswer %>" />
+          
+          <div class="form-group">
+            <label for="userAnswer">What is the name of this album?</label>
+            <input 
+              type="text" 
+              id="userAnswer"
+              name="userAnswer" 
+              required 
+              placeholder="Enter album name..."
+            />
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn">Submit Answer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

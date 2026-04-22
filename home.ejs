@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To Album Covers Quiz!</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body class="home-page">
+    <nav class="nav">
+      <div class="container">
+        <a href="/">Home</a>
+        <a href="/viewPreferences">View Preferences</a>
+        <a href="/loadPreferences">Use Preferences</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Welcome To Album Covers Quiz!</h1>
+      <p>Test your music knowledge by identifying album covers from your favorite artists!</p>
+
+      <form id="musicForm" action="/startQuiz" method="POST">
+        <h2>Tell us about your music taste</h2>
+        
+        <div class="form-group">
+          <label for="genres">Favorite Genres</label>
+          <input 
+            type="text" 
+            id="genres"
+            name="genres" 
+            value="<%= pref?.genres || '' %>" 
+            placeholder="e.g., Pop, Jazz, Rock" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="artists">Favorite Artists</label>
+          <input 
+            type="text" 
+            id="artists"
+            name="artists" 
+            value="<%= pref?.artists || '' %>" 
+            placeholder="e.g., Beyoncé, The Beatles" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="albums">Favorite Albums</label>
+          <input 
+            type="text" 
+            id="albums"
+            name="albums" 
+            value="<%= pref?.albums || '' %>" 
+            placeholder="e.g., Thriller, Lemonade" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="songs">Favorite Songs</label>
+          <input 
+            type="text" 
+            id="songs"
+            name="songs" 
+            value="<%= pref?.songs || '' %>" 
+            placeholder="e.g., Hello, Bohemian Rhapsody" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="misc">Other Music Interests</label>
+          <textarea 
+            id="misc"
+            name="misc" 
+            rows="3" 
+            placeholder="e.g., I love discovering indie artists or 80s synth pop"
+          ><%= pref?.misc || '' %></textarea>
+        </div>
+
+        <div class="button-group">
+          <button type="reset" class="btn">Reset</button>
+          <button type="submit" class="btn">Start Quiz!</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
